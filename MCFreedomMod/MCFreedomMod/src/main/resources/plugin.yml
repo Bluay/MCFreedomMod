@@ -1,0 +1,9 @@
+name: MCFreedomMod
+main: me.totalfreedom.totalfreedommod.TotalFreedomMod
+version: ${tfm.build.version}
+description: Plugin for the MC Freedom server.
+depend: [Aero, WorldEdit]
+softdepend: [BukkitTelnet, Essentials]
+authors: [Madgeek1450, Prozza, Epic_Face32301]
+
+# plugin.yml is no longer used to define commands.

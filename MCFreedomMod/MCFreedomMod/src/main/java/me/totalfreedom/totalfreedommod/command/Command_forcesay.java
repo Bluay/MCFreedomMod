@@ -1,0 +1,28 @@
+package me.totalfreedom.totalfreedommod.command;
+
+import static com.earth2me.essentials.commands.EssentialsCommand.getFinalArg;
+import me.totalfreedom.totalfreedommod.rank.Rank;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+
+@CommandPermissions(level = Rank.EXECUTIVE, source = SourceType.BOTH)
+@CommandParameters(description = "Say something in the text of the target player!", usage = "/<command> [player]", aliases = "fs")
+public class Command_forcesay extends FreedomCommand
+{
+
+    @Override
+    public boolean run(CommandSender sender, Player playerSender, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
+    {
+    	if(args.length < 2){
+    		msg("Enter a Player to Force.");
+    		return false;
+    	}
+    	else{
+        final Player player = getPlayer(args[0]);
+			player.chat(getFinalArg(args, 1).substring(0));
+    	}
+        return true;
+        
+    }
+}
